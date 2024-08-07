@@ -28,13 +28,40 @@ public class Day_1
         for(int a :brr){
             System.out.print(a+" ");
         }
+        System.out.println();
     }
-    public static void deletion(int element){
+    public static void deletion(int pos){
         int arr[] = {1,2,3,4,5};
+        int brr[] = new int[arr.length-1];
+        if(pos<0 || pos > arr.length){
+            System.out.println("Invalid position");
+        }
+        else{
+        for (int i = 0 ;i<pos-1;i++){
+             brr[i] = arr[i];
+        }
+        for(int j = pos;j<arr.length;j++){
+            brr[j-1] = arr[j];
+        }}
+        for(int a :brr){
+            System.out.print(a+" ");
+        }
+        System.out.println();
     }
 
+    public static void delete1(int pos){
+        int arr[] = {1,2,3,4,5};
+        for(int i = pos-1;i< arr.length-1;i++){
+            arr[i] = arr[i+1];
+        }
+        for(int i = 0;i<arr.length-1;i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
     public static void main(String[] args) {
                 Day_1.traversal();
                 Day_1.insertion(2,40);
+                Day_1.deletion(3);
+                Day_1.delete1(3);
     }
 }
