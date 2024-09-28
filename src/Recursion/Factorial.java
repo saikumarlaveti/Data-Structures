@@ -129,6 +129,22 @@ public class Factorial {
             }
         }
     }
+
+    public static int lastOccurence(int[] arr,int key,int i)
+    {
+        if(i==arr.length)
+        {
+            return -1;
+        }
+
+            int found = lastOccurence(arr,key,i+1);
+            if(found == -1 && arr[i]==key)
+            {
+                return i;
+            }
+            return found;
+    }
+
     public static void main(String[] args) {
 //        System.out.println(Factorial.findFactorial(5));
 //        System.out.println(Factorial.sumNaturalNumber(5));
@@ -155,14 +171,22 @@ public class Factorial {
 //        else{
 //            System.out.println("not a sorted array");
 //        }
-        int[] arr  = {1,2,3,4,5};
-      int i =   Factorial.firstOccurence(arr,0,5);
-      if(i>=0)
-      {
-          System.out.println("Element found at index number "+i);
-      }
-      else {
-          System.out.println("Element not found");
-      }
-    }
+//        int[] arr  = {1,2,3,4,5};
+//      int i =   Factorial.firstOccurence(arr,0,5);
+//      if(i>=0)
+//      {
+//          System.out.println("Element found at index number "+i);
+//      }
+//      else {
+//          System.out.println("Element not found");
+//      }
+//        int[] arr  = {1,2,3,4,5,2,3};
+//        int key = 3;
+//        int  i = Factorial.lastOccurence(arr,key,0);
+//        System.out.println(i);
+
+
+
+
+   }
 }
