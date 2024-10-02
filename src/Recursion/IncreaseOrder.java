@@ -22,7 +22,7 @@ public class IncreaseOrder {
         }
         int half = optimizedPower(a,n/2);
         System.out.println(half);
-        return half*half;
+         return half*half;
     }
 
     public static void main(String[] args) {
