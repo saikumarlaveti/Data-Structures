@@ -1,4 +1,9 @@
 package Queue.SimpleQueue.LinkedList;
+
+import Queue.SimpleQueue.Array.Queue;
+
+import java.util.LinkedList;
+
 class QueueLinkedList{
     Node head;
     public void enque(int data)
@@ -26,9 +31,7 @@ class QueueLinkedList{
             System.out.println("Queue is Empty");
         }
         else {
-            Node temp = head;
-            head = null;
-            head = temp.next;
+          head = head.next;
         }
     }
     public void display()
