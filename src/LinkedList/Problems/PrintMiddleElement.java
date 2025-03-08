@@ -64,11 +64,12 @@ public class PrintMiddleElement {
 
     public static void main(String[] args) {
         PrintMiddleElement pm = new PrintMiddleElement();
-        pm.insertAtFirsr(1);
-        pm.insertAtFirsr(2);
-        pm.insertAtFirsr(3);
-        pm.insertAtFirsr(4);
-        pm.insertAtFirsr(5);
+        pm.insertAtFirsr(60);
+        pm.insertAtFirsr(50);
+        pm.insertAtFirsr(40);
+        pm.insertAtFirsr(30);
+        pm.insertAtFirsr(20);
+        pm.insertAtFirsr(10);
         pm.display();
         System.out.println(pm.findLength());
        pm.printElement();
