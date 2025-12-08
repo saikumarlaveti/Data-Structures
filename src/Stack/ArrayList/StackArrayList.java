@@ -31,7 +31,7 @@ public class StackArrayList {
         {
             return -1;
         }
-        int top = list.get(list.size()-1);
+        int top = list.getLast();
         list.remove(list.size()-1);
         return top;
     }

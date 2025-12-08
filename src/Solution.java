@@ -1,36 +1,71 @@
-import java.util.Arrays;
-import java.util.Stack;
-
+//class Solution{
+//    public String removeSpaces(String name){
+//        //StringBuffer word  = new StringBuffer();
+//        String word = "";
+//        for(int i = 0;i<name.length();i++){
+//            if(name.charAt(i) == ' ' || name.charAt(i) == ',' || name.charAt(i) == ':'){
+//                continue;
+//            }
+//            else {
+//                //word.append(name.charAt(i));
+//                word += name.charAt(i);
+//            }
+//        }
+//        return word;
+//    }
+//    public boolean pal(String name){
+//        name = name.toLowerCase();
+//        String word = removeSpaces(name);
+//        String original = word;
+//        String reverese = "";
+//        for(int i = word.length()-1;i>=0;i--){
+//                    reverese += word.charAt(i);
+//                }
+//        System.out.println(word);
+//        System.out.println(reverese);
+//        return original.equals(reverese);
+//    }
+//    public static void main(String[] args) {
+//      //  String name = "A man, a plan, a canal: Panama";
+//        String name = "Saiku   ma,r";
+//        Solution s = new Solution();
+//        System.out.println(s.pal(name));
+//
+//    }
+//}
 class Solution {
-            public boolean isValid(String s) {
-                Stack<Character> stack = new Stack<Character>();
-                for (char c : s.toCharArray()) {
-                    if (c == '(')
-                        stack.push(')');
-                    else if (c == '{')
-                        stack.push('}');
-                    else if (c == '[')
-                        stack.push(']');
-                    else if (stack.isEmpty() || stack.pop() != c)
-                        return false;
-                }
-                return stack.isEmpty();
+    public boolean isPalindrome(String s) {
+         s = s.toLowerCase();
+        String remove = "";
+        for(int i = 0;i<s.length();i++){
+            if(s.matches("[a-zA-Z]")){
+                remove += s.charAt(i);
             }
-        
-    public static void main(String[] args) {
-        //String s = "([{}";
-        //String s1 = "(])";
-        String s2 = "()[]{}";
-        Solution ss = new Solution();
-        //System.out.println(ss.isValid(s));
-        //System.out.println(ss.isValid(s1));
-        System.out.println(ss.isValid(s2));
+            else {
+                continue;
+            }
+//            if(s.charAt(i) <='z' || s.charAt(i) >='a'){
+//                remove += s.charAt(i);
+//            }
+//            else{
+//                continue;
+//            }
+        }
+        String reverse = "";
+
+        for(int i = remove.length()-1;i>=0;i--){
+            reverse += remove.charAt(i);
+        }
+        System.out.println(remove);
+        System.out.println(reverse);
+        return remove.equals(reverse);
+    }
+        public static void main(String[] args) {
+            // String name = "A man, a plan, a canal: Panama";
+        //String name = "Saiku   ma,r";
+        Solution s = new Solution();
+        String name = "race a car";
+        System.out.println(s.isPalindrome(name));
+
     }
 }
-       
-
-
-
-
-
-//-----------------------------------------------------
