@@ -1,6 +1,6 @@
 package JavaTpoint;
 
-public  class FibonacciSeries_1 {
+public  class FibonacciSeries_01 {
     public static void for_Fibonacci(int a ,int b , int limit){
         System.out.print(a + " " + b + " ");
         for(int i = 1 ;i<=limit;i++){
@@ -43,6 +43,8 @@ public  class FibonacciSeries_1 {
         System.out.print(" " + c);
         recursion_Fibonacci(b,c,--limit);
     }
+
+  //  solve in java 8
 
     public static void main(String[] args) {
         for_Fibonacci(0,1,10);
