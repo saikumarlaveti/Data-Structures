@@ -30,7 +30,7 @@ public class Problem1 {
             count++;
             t = t.next;
         }
-        System.out.println("Number of Node in the LinkedList  :"+ count);
+        System.out.println("Number of Node in the List.LinkedList  :"+ count);
     }
     public void display(){
         Node temp = head;
@@ -48,7 +48,7 @@ public class Problem1 {
         p1.add(2);
         p1.add(3);
         p1.display(); // 3 2 1
-       p1.count(); //Number of Node in the LinkedList  :3
+       p1.count(); //Number of Node in the List.LinkedList  :3
 
     }
 }

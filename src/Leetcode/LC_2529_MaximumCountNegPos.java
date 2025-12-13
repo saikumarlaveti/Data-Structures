@@ -14,8 +14,8 @@ public  class LC_2529_MaximumCountNegPos {
         }
         return Math.max(Negative,Positive);
 
-//         Long Negative  = Arrays.stream(nums).filter(i->i<0).count();
-//         Long Positive = Arrays.stream(nums).filter(i->i>0).count();
+//         Long Negative  = GFG.Arrays.stream(nums).filter(i->i<0).count();
+//         Long Positive = GFG.Arrays.stream(nums).filter(i->i>0).count();
 //         return (int) Math.max(Negative,Positive);
 
 

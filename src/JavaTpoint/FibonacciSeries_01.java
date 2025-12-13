@@ -53,7 +53,7 @@ public  class FibonacciSeries_01 {
         System.out.println();
         do_Fibonacci(0,1,10);
         System.out.println();
-        System.out.println("Recursion :");
+        System.out.println("LeetcodeConcepts.Recursion :");
         System.out.print("0"  + " 1");
         recursion_Fibonacci(0,1,10);
     }

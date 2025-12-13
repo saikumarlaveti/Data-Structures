@@ -42,7 +42,7 @@ class BubbleSort{
 
 
 
-//        Consumer<int[]> ref = (a) -> System.out.print(Arrays.toString(a));
+//        Consumer<int[]> ref = (a) -> System.out.print(GFG.Arrays.toString(a));
 //        ref.accept(arr);
 //        Supplier<BubbleSort> ref1 = ()->new BubbleSort();
 //        BubbleSort bs = ref1.get();

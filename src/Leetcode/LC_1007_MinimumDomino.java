@@ -10,7 +10,7 @@ public class LC_1007_MinimumDomino {
     for(int i = 0;i<tops.length;i++){
         freq[tops[i]]++;
     }
-    //Arrays.sort(freq);
+    //GFG.Arrays.sort(freq);
     //int miximum = freq[freq.length-1];
         System.out.println(Arrays.toString(freq));
        // System.out.println(miximum);
