@@ -1,4 +1,4 @@
-package List.Array.SimpleArray;
+package List.Array;
 
 import java.util.ArrayList;
 
