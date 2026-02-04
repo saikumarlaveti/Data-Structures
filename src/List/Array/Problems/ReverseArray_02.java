@@ -33,5 +33,6 @@ public class ReverseArray_02 {
         System.out.println(Arrays.toString(reverse(arr)));
         int[] brr = {1,2,3,4,5,6};
         System.out.println(Arrays.toString(reverse_02(brr)));
+
     }
 }
