@@ -2,7 +2,7 @@ package List.Array.Problems;
 
 import java.util.Arrays;
 
-public class Sort012s {
+public class Sort012s_05 {
     public static void sortMethod_1(int[] arr){
         Arrays.sort(arr);
     }
