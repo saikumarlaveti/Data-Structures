@@ -2,7 +2,7 @@ package List.Array.Problems;
 
 import java.util.Arrays;
 
-public class RotateArrayByOne_03 {
+public class GFG_03_RotateArrayByOne {
     //Method - 1
     public static void rotate_1(int[] arr){
         int  n = arr.length;

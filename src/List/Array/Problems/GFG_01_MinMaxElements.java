@@ -3,7 +3,7 @@ package List.Array.Problems;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class MinMaxElements_01 {
+public class GFG_01_MinMaxElements {
 
     //Method : 1
     public static ArrayList<Integer> minMaxElements(int[] arr){

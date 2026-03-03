@@ -1,6 +1,6 @@
 package List.Array.Problems;
 
-public class maximum_number_of_1s_07 {
+public class GFG_07_maximum_number_of_1s {
 public   static  int rowWithMax1s(int mat[][]) {
         int max__ones = 0;
         int max_index = 0;

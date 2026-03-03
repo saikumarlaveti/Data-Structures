@@ -2,7 +2,7 @@ package List.Array.Problems;
 
 import java.util.Arrays;
 
-public class SortAnArray_04 {
+public class GFG_04_SortAnArray {
     //Method -1 (Using third Variable)
     public static void sortAnArray_01(int[] arr){
         for(int i = 0;i<=arr.length-2;i++){

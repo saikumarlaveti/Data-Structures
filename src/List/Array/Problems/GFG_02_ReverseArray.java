@@ -2,7 +2,7 @@ package List.Array.Problems;
 
 import java.util.Arrays;
 
-public class ReverseArray_02 {
+public class GFG_02_ReverseArray {
     //Method - 1
     public static int[] reverse(int[] arr){
         int left = 0;

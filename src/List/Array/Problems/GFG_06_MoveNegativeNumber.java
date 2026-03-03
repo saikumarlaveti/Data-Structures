@@ -2,7 +2,7 @@ package List.Array.Problems;
 
 import java.util.Arrays;
 
-public class MoveNegativeNumber_06 {
+public class GFG_06_MoveNegativeNumber {
     public static void sortMethod_1(int[] arr){
         Arrays.sort(arr);
     }
