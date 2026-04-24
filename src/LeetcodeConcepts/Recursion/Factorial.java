@@ -186,7 +186,37 @@ public class Factorial {
 //        System.out.println(i);
 
 
+        int variable = 5;
+        int sum = 1;
+        for(int i = 1;i<=variable;i++){
+          sum *= i;
+        }
+        System.out.println(sum);
 
+        System.out.println(factorial(5));
+        System.out.println(fabonacci(9));
+    }
 
-   }
+    public static int factorial(int n) {
+        if(n<0){
+            return 1;
+        }
+        if (n == 0 || n == 1) {
+            return 1;
+        } else {
+            return n * (factorial(n - 1));
+        }
+    }
+
+    public static int fabonacci(int n){
+        if(n<0){
+            return 1;
+        }
+        else if(n==0 || n==1){
+            return 1;
+        }
+        else{
+            return fibnacci(n-1) + fibnacci(n-2);
+        }
+    }
 }

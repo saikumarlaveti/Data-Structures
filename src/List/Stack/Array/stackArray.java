@@ -1,76 +1,97 @@
 package List.Stack.Array;
 
-public class stackArray {
-    int maxSize;
-    int[] stack;
-    int top;
+import java.util.Scanner;
 
-stackArray(int Size)
-{
-    stack = new int[Size];
-    maxSize = Size;
-    top = -1;
-}
-
-    public void push(int data)
-    {
-        if(isFull())
-        {
-            System.out.println("Stack is full");
-        }
-        else {
-        stack[++top] = data;
-            System.out.println(data + " pushed to the stack");
-        }
+class stackArray {
+    static int[] arr;
+    static int index =-1;
+    public static void stackImpl(int[] arr){
+        /*
+        1.push( )
+        2.pop ( )
+        3.peek( )
+        4.isEmpty( )
+        */
     }
 
-    public void pop()
-    {
-        if(isEmpty())
-        {
+    //push ()
+    public static void stackPush(int element) {
+        if(arr.length-1 == index){
+            System.out.println("Stack is Full ");
+        }
+        arr[++index] = element;
+
+    }
+
+    //pop()
+    public  static void stackPop(){
+        if(index ==-1){
             System.out.println("Stack is Empty");
+            return;
         }
-        else {
-           top--;
-        }
+        System.out.println("Poped element is " + arr[index]);
+        index--;
     }
 
-    public void peek()
-    {
-        if(isEmpty())
-        {
-            System.out.println("Stack is Empty");
+    //peek()
+    public static int statckpeek(){
+        if(index == -1){
+            return -1;
         }
-        else {
-            System.out.println("The top element is "+stack[top]);
-        }
-    }
-    public boolean isEmpty()
-    {
-        return (top==-1);
-    }
-    public boolean isFull()
-    {
-        return (top == maxSize-1);
+        System.out.println("peek element is " + arr[index]);
+        return arr[index];
     }
 
-    public void display()
-    {
-        for(int i =0;i<=top;i++)
-        {
-            System.out.print(stack[i]+" ");
-        }
-        System.out.println();
+    //isEmpth()
+    public static boolean stackIsEmpty(){
+        return index == -1;
     }
 
-
-    public static void main(String[] args)
-    {
-        stackArray sta = new stackArray(5);
-        sta.push(1);
-        sta.push(2);
-        sta.display();
-        sta.peek();
-        sta.display();
+    //print Stack
+    public static void printStack(){
+        for(int i = 0;i<=index;i++){
+            System.out.print(arr[i] + " ");
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the length of the stack :: ");
+        int length = sc.nextInt();
+        arr = new int[length];
+        System.out.println("How many operations : ");
+        int operations = sc.nextInt();
+        for(int i = 0;i<operations;i++) {
+            System.out.println("\nChoose your option :  \n 1.push() \n 2.pop() \n 3.peek() \n 4.isEmpty() \n 5.print()");
+            int option = sc.nextInt();
+            switch (option) {
+                //push ()
+                case 1: {
+                    System.out.print("Enter element ");
+                    int element = sc.nextInt();
+                    stackPush(element);
+                    break;
+                }
+                //pop ()
+                case 2: {
+                    stackPop();
+                    break;
+                }
+                case 3: {
+                    System.out.println(statckpeek());
+                    break;
+                }
+                case 4: {
+                    System.out.println(stackIsEmpty());
+                    break;
+                }
+                case 5: {
+                    printStack();
+                    break;
+                }
+                default:{
+                    System.out.println("Invalid Choose");
+                }
+            }
+        }
     }
 }
