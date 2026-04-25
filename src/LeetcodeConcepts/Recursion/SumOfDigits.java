@@ -14,6 +14,19 @@ public class SumOfDigits {
         }
     }
 
+    public int sumofDigits_efficient(int number){
+
+        if(number==0){
+            return 0;
+        }
+
+        else{
+
+            return number%10+ sumofDigits_efficient(number/10);
+        }
+        }
+
+
 
     public int sumOfDigitsIterations(int sum,int  number){
        while(number>0){
@@ -26,6 +39,7 @@ public class SumOfDigits {
     public static void main(String[] args) {
         SumOfDigits sod =new SumOfDigits();
         System.out.println(sod.sumofDigits(0,234));
+        System.out.println(sod.sumofDigits_efficient(234));
         System.out.println(sod.sumOfDigitsIterations(0,234));
     }
 }
