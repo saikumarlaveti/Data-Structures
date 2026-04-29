@@ -28,6 +28,11 @@ public class GFG_01_MinMaxElements {
       Arrays.sort(arr);
         return new int[]{arr[0],arr[arr.length-1]};
     }
+
+
+
+
+
     public static void main(String[] args) {
         int[] arr = {32011,123,1045,1205,254,28763,6537,3161};
         System.out.println(minMaxElements(arr));
