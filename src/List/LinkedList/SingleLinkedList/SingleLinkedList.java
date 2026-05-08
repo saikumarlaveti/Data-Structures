@@ -62,6 +62,38 @@ public class SingleLinkedList{
        }
     }
 
+    public boolean searchElement(int value){
+        Node temp = head;
+        while(temp != null){
+            if(temp.value == value){
+                return true;
+            }
+            temp = temp.next;
+        }
+        return false;
+    }
+
+    public void deleteAtFirstElement(){
+        if(head == null){
+            return ;
+        }
+        head = head.next;
+    }
+
+    public void deleteAtLastElement(){
+        if(head == null){
+            return;
+        }
+        Node temp = head;
+        Node pre = null;
+        while(temp.next != null){
+                pre = temp;
+                temp = temp.next;
+
+        }
+        tail= pre;
+    }
+
     public void display(){
         if(head == null){
             return;
@@ -85,7 +117,13 @@ public class SingleLinkedList{
         sll.insertElementAtLast(10);
         //sll.display();
         sll.insertElementAtGivenPosition(7,1);
-        sll.insertElementAtGivenPosition(9,3);
+        sll.insertElementAtGivenPosition(9,6);
+        sll.display();
+        System.out.println(sll.searchElement(10));
+        sll.deleteAtFirstElement();
+        sll.display();
+        sll.deleteAtLastElement();
+        System.out.println();
         sll.display();
     }
 }
