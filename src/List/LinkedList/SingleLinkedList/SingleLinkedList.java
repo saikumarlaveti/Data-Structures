@@ -73,13 +73,39 @@ public class SingleLinkedList{
         return false;
     }
 
-    public void deleteAtFirstElement(){
-        if(head == null){
-            return ;
+    public void deleteAtFirstElement() {
+        if (head == null) {
+            return;
+        } else if (head.next == null) {
+            head = null;
+            tail = null;
+        } else {
+            head = head.next;
         }
-        head = head.next;
     }
 
+    public void deleteAtMiddleElement(int position){
+        int size = fineLength();
+        if(size<position){
+            System.out.println("position greater than length of the linked list");
+        } else if (position == 1) {
+            deleteAtFirstElement();
+        }
+        else{
+            Node temp = head;
+            Node pre = null;
+            int count = 0;
+            while(temp != null){
+                count++;
+                if(count == position){
+                    pre.next = temp.next;
+                    break;
+                }
+                pre = temp;
+                temp = temp.next;
+            }
+        }
+    }
     public void deleteAtLastElement(){
         if(head == null){
             return;
@@ -91,11 +117,27 @@ public class SingleLinkedList{
                 temp = temp.next;
 
         }
-        tail= pre;
+        tail = temp;
+        pre.next = null;
     }
 
+    public int fineLength(){
+        int count =0;
+        if(head == null){
+            return 0;
+        }
+        else {
+            Node temp = head;
+            while(temp != null){
+                count++;
+                temp = temp.next;
+            }
+        }
+        return count;
+    }
     public void display(){
         if(head == null){
+            System.out.println("empty");
             return;
         }
         Node temp = head;
@@ -103,6 +145,7 @@ public class SingleLinkedList{
             System.out.print(temp.value + " ");
             temp = temp.next;
         }
+        System.out.println();
     }
 
 
@@ -122,8 +165,20 @@ public class SingleLinkedList{
         System.out.println(sll.searchElement(10));
         sll.deleteAtFirstElement();
         sll.display();
+        System.out.println("Delete At First Element");
+        sll.deleteAtFirstElement();
+        sll.display();
+
+        //delete At Last Element
+        System.out.println("Delete At Last Element");
         sll.deleteAtLastElement();
-        System.out.println();
+        sll.display();
+        System.out.println(sll.fineLength());
+        sll.deleteAtMiddleElement(2);
+        sll.display();
+        sll.deleteAtMiddleElement(2);
+        sll.display();
+        sll.deleteAtMiddleElement(1);
         sll.display();
     }
 }
