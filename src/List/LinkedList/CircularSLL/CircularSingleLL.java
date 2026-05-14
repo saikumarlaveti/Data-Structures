@@ -19,6 +19,7 @@ public class CircularSingleLL {
         }
     }
 
+
     public void insertAtLast(int value){
         if(head == null){
             insertAtFirst(value);
@@ -30,6 +31,43 @@ public class CircularSingleLL {
             node.next = head;
             tail = node;
         }
+    }
+
+    public void insertAtSpecificLocation(int position,int value){
+        int length = sizeOfLinkedList();
+        if(position <=1|| head == null){
+            insertAtFirst(value);
+        }
+        else if(length<position){
+            insertAtLast(value);
+        }
+        CircularNode temp = head;
+        int count = 0;
+        while (count<position-1){
+            temp = temp.next;
+            count++;
+        }
+        CircularNode node = new CircularNode();
+        node.value = value;
+        node.next = temp.next;
+        temp.next  = node;
+
+    }
+
+    public int sizeOfLinkedList(){
+        int count;
+        if(head == null){
+            return 0;
+        }
+        else{
+             count = 1;
+            CircularNode temp = head;
+            do{
+                temp = temp.next;
+                count++;
+            }while(temp.next != head);
+        }
+        return count;
     }
     public void display(){
         if(head == null){
@@ -54,5 +92,10 @@ public class CircularSingleLL {
         csl.insertAtFirst(20);
         csl.display();
         csl.insertAtLast(33);
+        System.out.println(csl.sizeOfLinkedList());
+        csl.insertAtSpecificLocation(2,37);
+        csl.insertAtSpecificLocation(4,99);
+        csl.display();
+        System.out.println(csl.sizeOfLinkedList());
     }
 }
