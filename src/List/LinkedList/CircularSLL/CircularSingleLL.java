@@ -69,6 +69,36 @@ public class CircularSingleLL {
         }
         return count;
     }
+
+    public void deleteAtFirstNode(){
+        if(head == null){
+            return;
+        } else if (head == tail) {
+            head = null;
+            tail = null;
+        } else  {
+            head = head.next;
+            tail.next = head;
+        }
+    }
+
+    public void deleteAtLastNode(){
+        if(head == null){
+            return;
+        }
+        else if(head == tail){
+            head = null;
+            tail = null;
+        }
+        else{
+            CircularNode temp = head;
+           do{
+               temp = temp.next;
+           }while(temp.next != tail);
+           tail = temp;
+           tail.next = head;
+        }
+    }
     public void display(){
         if(head == null){
             return;
@@ -97,5 +127,14 @@ public class CircularSingleLL {
         csl.insertAtSpecificLocation(4,99);
         csl.display();
         System.out.println(csl.sizeOfLinkedList());
+        System.out.println("=====Printing all nodes=====" );
+        csl.display();
+        System.out.println("=====Delete At first node=====");
+        csl.deleteAtFirstNode();
+        csl.display();
+        System.out.println("=====Delete At Last node =====");
+        csl.deleteAtLastNode();
+        csl.deleteAtLastNode();
+        csl.display();
     }
 }
