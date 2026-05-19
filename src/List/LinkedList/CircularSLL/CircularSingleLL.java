@@ -82,6 +82,26 @@ public class CircularSingleLL {
         }
     }
 
+    public void deleteAtMiddle(int position){
+        if(head == null){
+            return;
+        }
+        int count = sizeOfLinkedList();
+        if(count < position){
+            deleteAtLastNode();
+        } else if (position == 1) {
+            deleteAtFirstNode();
+        } else{
+            CircularNode temp = head;
+            for(int  i = 1;i<position-1;i++){
+                temp = temp.next;
+            }
+            System.out.println(temp.next.next.value);
+            temp.next = temp.next.next;
+
+        }
+    }
+
     public void deleteAtLastNode(){
         if(head == null){
             return;
@@ -112,6 +132,7 @@ public class CircularSingleLL {
             System.out.println();
         }
     }
+
     public static void main(String[] args) {
         CircularSingleLL csl = new CircularSingleLL();
         csl.insertAtFirst(3);
@@ -135,6 +156,12 @@ public class CircularSingleLL {
         System.out.println("=====Delete At Last node =====");
         csl.deleteAtLastNode();
         csl.deleteAtLastNode();
+        csl.insertAtLast(8);
         csl.display();
+        System.out.println("Delete At middle node");
+        System.out.println(csl.sizeOfLinkedList());
+        csl.deleteAtMiddle(2);
+        csl.display();
+
     }
 }
