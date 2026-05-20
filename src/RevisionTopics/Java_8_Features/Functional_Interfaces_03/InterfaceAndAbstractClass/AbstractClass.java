@@ -5,5 +5,6 @@ package RevisionTopics.Java_8_Features.Functional_Interfaces_03.InterfaceAndAbst
         return "Saikumar Laveti";
     }
    abstract int addition(int a,int b);
+    abstract  int subtraction(int a, int b);
 
 }
