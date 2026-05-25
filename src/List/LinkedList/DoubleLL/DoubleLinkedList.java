@@ -6,17 +6,31 @@ DoubleNode tail;
 
 public void insertAtFirst(int value){
     DoubleNode node = new DoubleNode();
+    node.value = value;
     if(head == null){
-        node.value = value;
         node.pre = node.next = null;
-        head  = tail = node;
+        head  = node;
+        tail = node;
     }
     else {
-     node.value = value;
      node.next = head;
      head.pre = node;
      node.pre = null;
      head = node;
+    }
+}
+
+public void insertAtLast(int value) {
+    if (head == null) {
+        insertAtFirst(value);
+    }
+    else{
+        DoubleNode node = new DoubleNode();
+        node.value = value;
+        tail.next = node;
+        node.pre = tail;
+        node.next = null;
+        tail = node;
     }
 }
     public void display(){
@@ -25,17 +39,22 @@ public void insertAtFirst(int value){
     }
     else {
         DoubleNode temp = head;
-        do{
-            System.out.println(temp.value);
+        while(temp != null){
+            System.out.print(temp.value + " ");
             temp = temp.next;
-        }while(temp.next != null);
+        }
     }
+        System.out.println();
     }
     public static void main(String[] args) {
         DoubleLinkedList dll = new DoubleLinkedList();
         dll.insertAtFirst(1);
         dll.insertAtFirst(2);
         dll.insertAtFirst(3);
+        dll.display();
+        dll.insertAtLast(10);
+        dll.display();
+        dll.insertAtLast(20);
         dll.display();
     }
 }
