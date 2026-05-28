@@ -18,13 +18,13 @@ public class Method_References {
 
     public static void main(String[] args) {
         Function<Integer,Integer> square = Method_References::square;
-        System.out.println(square.apply(2));
+        System.out.println(square.apply(2));  //4
 
         BiFunction<Integer,Integer,Integer> addition = Method_References::add;
-        System.out.println(addition.apply(2,3));
+        System.out.println(addition.apply(2,3)); // 5
 
         Consumer<String> print = Method_References::display;
-        print.accept("Saikumar Laveti");
+        print.accept("Saikumar Laveti"); //My name is Saikumar Laveti
     }
 
 }
