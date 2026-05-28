@@ -36,6 +36,7 @@ public class removeDuplicates_01 {
 
     }
 
+    //This is method 1 using single linked list
     public void removeDuplicate(){
         if(head == null || head.next == null){
             return;
@@ -45,15 +46,17 @@ public class removeDuplicates_01 {
             while(temp_i != null){
                 Node prev = temp_i;
                 Node temp_j = temp_i.next;
-                while(temp_j != null){
-                    if(temp_i.value == temp_j.value){
+                while(temp_j != null) {
+                    if (temp_i.value == temp_j.value) {
                         prev.next = temp_j.next;
-                        if(temp_j.next ==null){
+                        if (temp_j.next == null) {
                             tail = prev;
                         }
+                        temp_j = temp_j.next;
+                    } else {
+                        prev = temp_j;
+                        temp_j = temp_j.next;
                     }
-                    prev = temp_j;
-                    temp_j = temp_j.next;
                 }
                 temp_i = temp_i.next;
             }
@@ -69,7 +72,7 @@ public class removeDuplicates_01 {
         removeDuplicates_01 rd = new removeDuplicates_01();
         rd.insertAtFirst(3);
         rd.insertAtFirst(1);
-        rd.insertAtFirst(2);
+        rd.insertAtFirst(1);
         rd.insertAtFirst(1);
         rd.insertAtFirst(3);
         rd.print();
