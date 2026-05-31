@@ -25,6 +25,7 @@ public class ForEach {
         System.out.println("with forEach( ) method :: ");
         nums.stream().filter(n->n%2==0).forEach(System.out::println) ;
 
+        //Example -3
         int[] arr = {5,6,7,8,9,10};
         Arrays.stream(arr).forEach(System.out::println);
     }
