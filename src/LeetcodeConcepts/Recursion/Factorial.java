@@ -158,7 +158,7 @@ public class Factorial {
 
 //        int[] array  = {1,2,3,4,5};
 //        if(Factorial.sortedArray(array)){
-//                System.out.println("Sorted Array ");
+//                System.out.println("Sorted_05 Array ");
 //        }
 //        else{
 //            System.out.println("not a sorted array");
@@ -166,7 +166,7 @@ public class Factorial {
 //
 //
 //        if(Factorial.sortedARR(array,0)){
-//            System.out.println("Sorted Array ");
+//            System.out.println("Sorted_05 Array ");
 //        }
 //        else{
 //            System.out.println("not a sorted array");

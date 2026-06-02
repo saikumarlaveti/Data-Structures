@@ -7,7 +7,7 @@ import java.util.Set;
 public class LC_1941_EqualNumberOfOccurrences {
     public static boolean areOccurrencesEqual(String s) {
 
-        // step - 1 : Create Hash Map key : Character and Value : Integer
+        // step - 1 : Create Hash Map_03 key : Character and Value : Integer
     Map<Character,Integer> occurrence = new HashMap<>();
 
     // step - 2 : convert the String into character Array

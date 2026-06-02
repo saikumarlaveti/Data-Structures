@@ -2,7 +2,7 @@ package RevisionTopics.Java_8_Features.Phase_3_StreamAPI;
 
 import java.util.Arrays;
 
-public class Filter {
+public class Filter_02 {
     public static void main(String[] args) {
         int[] arr = {1,2,3,4,5,6,7,8,9,10};
         System.out.println("Even Numbers :");
@@ -10,7 +10,7 @@ public class Filter {
         System.out.println("Odd Numbers :");
         Arrays.stream(arr).filter(n->n%2==1).forEach(System.out::println);
 
-        System.out.println("Without Filter API");
+        System.out.println("Without Filter_02 API");
         for (int j : arr) {
             if (j % 2 == 0) {
                 System.out.print(j + " ");

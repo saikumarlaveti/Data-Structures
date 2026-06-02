@@ -3,7 +3,7 @@ package RevisionTopics.Java_8_Features.Phase_3_StreamAPI;
 import java.util.Arrays;
 import java.util.List;
 
-public class ForEach {
+public class ForEach_01 {
     public static void main(String[] args) {
         //Example - 1
         List<String> names = Arrays.asList("Java","Spring Boot","Mysql");
