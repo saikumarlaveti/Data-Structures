@@ -1,6 +1,6 @@
-package LeetcodeConcepts.BitwiseOperators;
+package LeetcodeConcepts.BitwiseOperators.Operations;
 
-public class SetIthBit {
+public class  SetIthBit {
     public void setBit(int num,int i){
         int mask = 1 <<i;
         num = num|mask;

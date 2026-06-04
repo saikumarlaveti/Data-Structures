@@ -1,4 +1,4 @@
-package LeetcodeConcepts.BitwiseOperators;
+package LeetcodeConcepts.BitwiseOperators.Operations;
 
 public class ClearLastiBits {
     public int clearLast(int num,int pos){

@@ -1,4 +1,4 @@
-package LeetcodeConcepts.BitwiseOperators;
+package LeetcodeConcepts.BitwiseOperators.Operations;
 
 public class ClearithBit {
     public int clearBit(int num,int i){
