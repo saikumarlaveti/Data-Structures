@@ -48,5 +48,9 @@ public class MinAndMaxElement_01 {
         //method 3 using java 8
         int[] c = {3,4,9,5,2};
         minAndMaxElement_03(c);
+
+        for(int i = 1;i<=59;i++){
+            System.out.println("JavaScript :" + i);
+        }
     }
 }
