@@ -75,16 +75,16 @@ public class Student {
                                 Student::getName,
                                 Collectors.toList()
                         )
-                )
-                );
-        System.out.println(namesGroupByAge) ; //
+                ));
+        System.out.println(namesGroupByAge) ; //  {24=[Saikumar], 25=[Santosh], 27=[Eswara Rao, Ganesh], 28=[Naresh, Naresh]}
+
             List<Integer> nums = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
             Map<String,List<Integer>> no = nums.stream().collect(
                     Collectors.groupingBy(
                             n->n%2==0?"Even":"Odd"
                     ));
 
-        System.out.println(no);
+        System.out.println(no);  //{Even=[2, 4, 6, 8, 10], Odd=[1, 3, 5, 7, 9]}
 
 
 

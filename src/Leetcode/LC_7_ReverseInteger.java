@@ -26,7 +26,7 @@ public class LC_7_ReverseInteger {
         System.out.println(isNegative);
 
         String reversedStr = Integer.toString(Math.abs(x))
-                .chars() // Convert to ASCII IntStream
+                .chars() // Convert to ASCII IntStreamClass
                 .mapToObj(c -> (char) c) // Convert ASCII to Character
                 .map(String::valueOf) // Convert Character to String
                 .reduce("", (b, c) -> c + b); // Reverse order
