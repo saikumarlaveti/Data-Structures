@@ -1,15 +1,12 @@
 package Queue.CircularQueue;
 
-import java.util.Arrays;
-
-public class ArrayQueue {
+public class Array_Normal_Queue {
     public int front;
     public int rear;
-    public int currentIndex = 0;
-    public int size;
+     public int size;
     int arr[];
     //create an array
-    ArrayQueue(int length){
+    Array_Normal_Queue(int length){
         arr = new int[length];
          front = -1;
          rear = -1;
@@ -18,13 +15,14 @@ public class ArrayQueue {
 
     //enqueue
     public void enqueue(int n){
+        if(rear == size-1){
+            System.out.println("Queur over flow");
+            return;
+        }
         if(front == -1 ){
             front = 0;
         }
-
-            arr[currentIndex++] = n;
-            rear = rear+1;
-
+            arr[++rear] = n;
     }
 
     public int dequeue(){
@@ -33,10 +31,15 @@ public class ArrayQueue {
         }
         else{
             int temp = arr[front];
-            front += 1;
-            return temp;
-        }
+            if(front == rear){
+                front = rear =  -1;
 
+            }
+            else {
+                front ++;
+
+            }return temp;
+        }
     }
 
     public boolean isEmpty(){
@@ -60,7 +63,7 @@ public class ArrayQueue {
 
 
     public static void main(String[] args) {
-        ArrayQueue queue = new ArrayQueue(5);
+        Array_Normal_Queue queue = new Array_Normal_Queue(5);
         queue.enqueue(5);
         queue.enqueue(4);
         queue.enqueue(3);
