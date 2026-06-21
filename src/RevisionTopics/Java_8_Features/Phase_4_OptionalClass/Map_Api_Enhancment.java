@@ -1,9 +1,6 @@
 package RevisionTopics.Java_8_Features.Phase_4_OptionalClass;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Map_Api_Enhancment {
     public static void main(String[] args) {
@@ -48,27 +45,71 @@ public class Map_Api_Enhancment {
 // Alice is 28 years old
 // Bob is 35 years old
   //      4. replace()
-        Map<String, Integer> scores = new HashMap<>();
-        scores.put("Alice", 90);
-        scores.put("Bob", 80);
+        Map<String, Integer> scores1 = new HashMap<>();
+        scores1.put("Alice", 90);
+        scores1.put("Bob", 80);
 
 // Version 1 — replace if key exists
-        scores.replace("Alice", 95);
-        System.out.println(scores);  // {Alice=95, Bob=80}
+        scores1.replace("Alice", 95);
+        System.out.println(scores1);  // {Alice=95, Bob=80}
 
-        scores.replace("Charlie", 100);  // key doesn't exist — no effect
-        System.out.println(scores);      // {Alice=95, Bob=80}
+        scores1.replace("Charlie", 100);  // key doesn't exist — no effect
+        System.out.println(scores1);      // {Alice=95, Bob=80}
 
 // Version 2 — conditional replace
-        boolean updated = scores.replace("Bob", 80, 85);  // only if Bob == 80
+        boolean updated = scores1.replace("Bob", 80, 85);  // only if Bob == 80
         System.out.println(updated);  // true
-        System.out.println(scores);   // {Alice=95, Bob=85}
+        System.out.println(scores1);   // {Alice=95, Bob=85}
 
-        boolean updated2 = scores.replace("Bob", 80, 90);  // Bob is now 85, not 80
+        boolean updated2 = scores1.replace("Bob", 80, 90);  // Bob is now 85, not 80
         System.out.println(updated2); // false — no change
   //      5. replaceAll()
+            Map<String,Integer> names = new HashMap<>();
+            names.put("Saikumar",10);
+            names.put("Santosh",20);
+
+            names.replaceAll((a,b)->b+5);
+            System.out.println(names);  // {Saikumar=15, Santosh=25}
+
+        // Using key in transformation
+        Map<String, String> greetings = new HashMap<>();
+        greetings.put("Alice", "Hi");
+        greetings.put("Bob", "Hello");
+
+        greetings.replaceAll((name, greeting) -> greeting + ", " + name + "!");
+        System.out.println(greetings);
+// {Alice=Hi, Alice!, Bob=Hello, Bob!}
+
   //      6. compute()
+        Map<String, Integer> marks = new HashMap<>();
+        marks.put("Alice", 80);
+
+// Update existing — increment by 10
+        marks.compute("Alice", (key, value) -> value + 10);
+        System.out.println(marks);  // {Alice=90}
+
+// Key doesn't exist — value passed to function is null
+        marks.compute("Bob", (key, value) -> (value == null) ? 50 : value + 10);
+        System.out.println(marks);  // {Alice=90, Bob=50}
+
+// Returning null removes the entry
+        marks.compute("Alice", (key, value) -> null);
+        System.out.println(marks);  // {Bob=50}
+
   //      7. computeIfAbsent()
+        Map<String, List<String>> groups = new HashMap<>();
+
+// Key absent — creates new ArrayList and adds element
+        groups.computeIfAbsent("fruits", k -> new ArrayList<>()).add("Apple");
+        groups.computeIfAbsent("fruits", k -> new ArrayList<>()).add("Banana");
+
+// Key already exists — reuses same list, doesn't recreate
+        groups.computeIfAbsent("vegetables", k -> new ArrayList<>()).add("Carrot");
+        System.out.println(groups);   // {fruits=[Apple, Banana], vegetables=[Carrot]}
+        groups.computeIfAbsent("fruits",k->new ArrayList<>()).add("Saikumar");
+        System.out.println(groups);  //  {fruits=[Apple, Banana, Saikumar], vegetables=[Carrot]}
+
+
    //     8. computeIfPresent()
   //      9. merge()
 
