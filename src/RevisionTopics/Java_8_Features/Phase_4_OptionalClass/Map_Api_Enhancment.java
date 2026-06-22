@@ -111,9 +111,33 @@ public class Map_Api_Enhancment {
 
 
    //     8. computeIfPresent()
+        Map<String, Integer> stock = new HashMap<>();
+        stock.put("Laptop", 10);
+
+// Key present — function is called
+        stock.computeIfPresent("Laptop", (key, qty) -> qty - 2);
+        System.out.println(stock);  // {Laptop=8}
+
+// Key absent — function NOT called, no effect
+        stock.computeIfPresent("Phone", (key, qty) -> qty - 2);
+        System.out.println(stock);  // {Laptop=8}  (unchanged)
+
+// Returning null removes the entry
+        stock.computeIfPresent("Laptop", (key, qty) -> null);
+        System.out.println(stock);  // {} (Laptop removed)
   //      9. merge()
+        Map<String, Integer> wordCount1 = new HashMap<>();
 
+// Key absent — value inserted directly (remappingFunction not called)
+        wordCount1.merge("apple", 1, Integer::sum);
+        System.out.println(wordCount1);  // {apple=1}
 
+// Key present — combines old + new using function
+        wordCount1.merge("apple", 1, Integer::sum);
+        System.out.println(wordCount1);  // {apple=2}
+
+        wordCount1.merge("apple", 5, Integer::sum);
+        System.out.println(wordCount1);  // {apple=7}
 
 
 
