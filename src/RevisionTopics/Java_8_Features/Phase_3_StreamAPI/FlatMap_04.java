@@ -21,14 +21,14 @@ public class FlatMap_04 {
          list.stream().flatMap(l->l.stream().map(l1->l1*2)).forEach(System.out::println);
 
          List<List<String>> names = Arrays.asList(
-                 Arrays.asList("Saikumar,Santosh"),
+                 Arrays.asList("LC_13_RomanToInteger,Santosh"),
                  Arrays.asList("Naveen","Naresh"),
                  Arrays.asList("Ganesh","Eswara Rao")
          );
 
          names.stream().flatMap(n->n.stream()).forEach(System.out::println);
          /*
-         Saikumar,Santosh
+         LC_13_RomanToInteger,Santosh
         Naveen
         Naresh
         Ganesh
@@ -38,7 +38,7 @@ public class FlatMap_04 {
         List<String> single = names.stream().flatMap(s->s.stream()).toList();
         System.out.println(single);
 
-        List<String> word = Arrays.asList("Saikumar");
+        List<String> word = Arrays.asList("LC_13_RomanToInteger");
         List<String>charas = word.stream().flatMap(w->Arrays.stream(w.split(""))).collect(Collectors.toList());
         System.out.println(charas);
 

@@ -9,7 +9,7 @@ public class BiFunction_06 {
         BiFunction<String,String,String> wish = (wish1,wish2) -> "Good " + wish1 + " " + wish2;
         //1.apply( )
         System.out.println(wish.apply("Morning ","Santosh "));   // Good Morning  Santosh
-        System.out.println(wish.apply("Night","Saikumar Laveti"));  // Good Night Saikumar
+        System.out.println(wish.apply("Night","LC_13_RomanToInteger Laveti"));  // Good Night LC_13_RomanToInteger
 
         //2.andThen( )
         BiFunction<Integer,Integer,Integer> result1 =  (a,b)-> a+b;  //2+3 = 5

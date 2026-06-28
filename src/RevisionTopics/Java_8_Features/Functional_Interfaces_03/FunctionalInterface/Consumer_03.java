@@ -7,7 +7,7 @@ public class Consumer_03 {
 
         //1.accept()
         Consumer<String> display = name-> System.out.println(name);
-        display.accept("Saikumar");  //Saikumar
+        display.accept("LC_13_RomanToInteger");  //LC_13_RomanToInteger
         display.accept("Santosh"); //Santosh
 
         //2.andThen()
@@ -17,7 +17,7 @@ public class Consumer_03 {
 
         Consumer<String> print = goodMorning.andThen(goodNight);
 
-        print.accept("Saikumar Laveti"); //Saikumar Laveti Good Night
+        print.accept("LC_13_RomanToInteger Laveti"); //LC_13_RomanToInteger Laveti Good Night
 
     }
 }

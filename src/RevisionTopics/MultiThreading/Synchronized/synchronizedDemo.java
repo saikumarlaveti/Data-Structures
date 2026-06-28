@@ -14,7 +14,7 @@ package RevisionTopics.MultiThreading.Synchronized;
 class synchronizedDemo{
     public static void main(String[] args) {
         display d = new display();
-        MyThread t1 = new MyThread(d, "Saikumar");
+        MyThread t1 = new MyThread(d, "LC_13_RomanToInteger");
         MyThread t2 = new MyThread(d, "Santosh");
         t1.start();
         t2.start();

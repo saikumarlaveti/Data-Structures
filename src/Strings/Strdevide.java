@@ -19,7 +19,7 @@ public class Strdevide {
         }
     }
     public static void main(String[] args) {
-        String names = "Saikumar";
+        String names = "LC_13_RomanToInteger";
         Strdevide str = new Strdevide();
         str.stringDevider(names);
     }

@@ -20,7 +20,7 @@ class Solutions {
 
     public static void main(String[] args) {
         Solutions s = new Solutions();
-        System.out.println( s.isPalindrome("Saikumar"));
+        System.out.println( s.isPalindrome("LC_13_RomanToInteger"));
         System.out.println(s.isPalindrome("SAS"));
     }
 }

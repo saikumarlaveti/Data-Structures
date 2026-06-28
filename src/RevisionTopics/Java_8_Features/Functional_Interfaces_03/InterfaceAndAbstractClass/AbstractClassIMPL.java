@@ -23,7 +23,7 @@ public class AbstractClassIMPL extends AbstractClass {
     }
 
     public static void main(String[] args) {
-        AbstractClassIMPL ab = new AbstractClassIMPL(1,"Saikumar Laveti");
+        AbstractClassIMPL ab = new AbstractClassIMPL(1,"LC_13_RomanToInteger Laveti");
         System.out.println(ab.addition(2,3));
         System.out.println(ab.greet());
     }

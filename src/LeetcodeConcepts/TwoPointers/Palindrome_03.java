@@ -11,7 +11,7 @@ public class Palindrome_03 {
 //    }
 
     public static void main(String[] args) {
-        String name = "Saikumar";
+        String name = "LC_13_RomanToInteger";
         String name1 = "Saikuar";
 
         System.out.println(name.equals(name1));

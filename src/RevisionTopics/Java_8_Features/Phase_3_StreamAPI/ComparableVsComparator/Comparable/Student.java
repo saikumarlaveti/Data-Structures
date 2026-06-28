@@ -26,7 +26,7 @@ public class Student implements Comparable<Student> {
 
     public static void main(String[] args) {
         List<Student> std = Arrays.asList(
-                new Student(1,"Saikumar",10000),
+                new Student(1,"LC_13_RomanToInteger",10000),
                 new Student(2,"Santosh",30000),
                 new Student(3,"Hema",11000)
         );

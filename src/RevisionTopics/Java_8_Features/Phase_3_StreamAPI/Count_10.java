@@ -12,7 +12,7 @@ public class Count_10 {
        long result =  numbers.stream().filter(n->n%2==0).count();  //5
         System.out.println(result);
 
-        List<String> names = Arrays.asList("Saikumar","Santosh","Naveen","Naresh");
+        List<String> names = Arrays.asList("LC_13_RomanToInteger","Santosh","Naveen","Naresh");
         Long result1 = names.stream().filter(n->n.startsWith("S")).count(); //2
         System.out.println(result1);
 

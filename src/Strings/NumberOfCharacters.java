@@ -20,10 +20,10 @@ public class NumberOfCharacters {
     }
     public static void main(String[] args) {
         NumberOfCharacters noc = new NumberOfCharacters();
-        noc.characterLength("Saikumar");//8
+        noc.characterLength("LC_13_RomanToInteger");//8
         noc.characterLength("Santosh Kumar");//13
 
-        noc.anotherMethod("Saikumar");//8
+        noc.anotherMethod("LC_13_RomanToInteger");//8
         noc.anotherMethod("Santosh Kumar");//12
 
     }

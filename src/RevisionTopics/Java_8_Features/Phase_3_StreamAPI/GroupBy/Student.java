@@ -53,7 +53,7 @@ public class Student {
 
     public static void main(String[] args) {
         List<Student> std = Arrays.asList(
-                new Student(1,"Saikumar",24),
+                new Student(1,"LC_13_RomanToInteger",24),
                 new Student(2,"Santosh",25),
                 new Student(3,"Eswara Rao",27),
                 new Student(4,"Ganesh",27),
@@ -76,7 +76,7 @@ public class Student {
                                 Collectors.toList()
                         )
                 ));
-        System.out.println(namesGroupByAge) ; //  {24=[Saikumar], 25=[Santosh], 27=[Eswara Rao, Ganesh], 28=[Naresh, Naresh]}
+        System.out.println(namesGroupByAge) ; //  {24=[LC_13_RomanToInteger], 25=[Santosh], 27=[Eswara Rao, Ganesh], 28=[Naresh, Naresh]}
 
             List<Integer> nums = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
             Map<String,List<Integer>> no = nums.stream().collect(

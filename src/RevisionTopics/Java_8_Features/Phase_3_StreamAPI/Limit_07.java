@@ -8,7 +8,7 @@ public class Limit_07 {
         List<Integer> numbers = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
         numbers.stream().limit(3).forEach(System.out::println); //1,2,3
 
-        List<String> names = Arrays.asList("Saikumar","Santosh","Naveen","Naresh");
-        names.stream().limit(2).forEach(System.out::println); //Saikumar , Santosh
+        List<String> names = Arrays.asList("LC_13_RomanToInteger","Santosh","Naveen","Naresh");
+        names.stream().limit(2).forEach(System.out::println); //LC_13_RomanToInteger , Santosh
     }
 }

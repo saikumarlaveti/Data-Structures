@@ -24,7 +24,7 @@ public class StaticMethod_References {
         System.out.println(addition.apply(2,3)); // 5
 
         Consumer<String> print = StaticMethod_References::display;
-        print.accept("Saikumar Laveti"); //My name is Saikumar Laveti
+        print.accept("LC_13_RomanToInteger Laveti"); //My name is LC_13_RomanToInteger Laveti
     }
 
 }

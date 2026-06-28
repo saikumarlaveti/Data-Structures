@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 public class Collect_16 {
     public static void main(String[] args) {
         // 1. collect(Collectors.toList())
-        List<String> nums = Arrays.asList("Saikumar", "Santosh", "Naresh", "Naveen");
+        List<String> nums = Arrays.asList("LC_13_RomanToInteger", "Santosh", "Naresh", "Naveen");
         List<String> upperCase = nums.stream().map(String::toUpperCase).toList();
         upperCase.stream().forEach(System.out::println);
 
@@ -18,9 +18,9 @@ public class Collect_16 {
         System.out.println(unique);
 
         //3. collect(Collectors.joining())
-        List<String> name = Arrays.asList("Saikumar", "Santosh", "Test", "Demo");
+        List<String> name = Arrays.asList("LC_13_RomanToInteger", "Santosh", "Test", "Demo");
         String result = name.stream().collect(Collectors.joining(","));
-        System.out.println(result);  // Saikumar,Santosh,Test,Demo
+        System.out.println(result);  // LC_13_RomanToInteger,Santosh,Test,Demo
 
         //4.counting
         List<Integer> num2 = Arrays.asList(1, 2, 3, 4, 5, 5, 4, 3, 2, 1);

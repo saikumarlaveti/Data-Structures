@@ -20,7 +20,7 @@ public class ReverseString_02 {
         }
     }
     public static void main(String[] args) {
-        String name = "Saikumar";
+        String name = "LC_13_RomanToInteger";
         ReverseString_02 reverse = new ReverseString_02();
         reverse.reverseString(name);
     }

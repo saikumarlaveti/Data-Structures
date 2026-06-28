@@ -6,7 +6,7 @@ import java.util.function.Supplier;
     public class Supplier_04 {
         public static void main(String[] args) {
 
-            Supplier<String> name = () -> "Saikumar Laveti";
+            Supplier<String> name = () -> "LC_13_RomanToInteger Laveti";
             System.out.println(name.get());
 
             Supplier<Integer> num = () ->(int)(Math.random()*100);

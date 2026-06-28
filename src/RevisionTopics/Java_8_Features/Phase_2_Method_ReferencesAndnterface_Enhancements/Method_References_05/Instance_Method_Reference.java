@@ -22,8 +22,8 @@ public class Instance_Method_Reference {
         Instance_Method_Reference imr = new Instance_Method_Reference();
 
         //without Using instance_Method_Reference
-        Consumer<String> wish = name->imr.great("Saikumar");
-        wish.accept("Saikumar "); // My name is Saikumar
+        Consumer<String> wish = name->imr.great("LC_13_RomanToInteger");
+        wish.accept("LC_13_RomanToInteger "); // My name is LC_13_RomanToInteger
 
         //with instance_Method_Reference
         Consumer<String> wish1 = imr::great;

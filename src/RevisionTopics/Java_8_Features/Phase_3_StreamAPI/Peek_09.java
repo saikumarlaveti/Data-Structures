@@ -9,7 +9,7 @@ public class Peek_09 {
         numbers.stream().peek(num-> System.out.println("Before : "+num)).map(n->n*2).forEach(System.out::println);
 
 
-        List<String> names = Arrays.asList("Saikumar","Santosh","Naveen","Naresh");
+        List<String> names = Arrays.asList("LC_13_RomanToInteger","Santosh","Naveen","Naresh");
         names.stream()
                 .peek(name -> System.out.println("Processing: " + name))
                 .map(String::toUpperCase)

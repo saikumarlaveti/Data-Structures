@@ -2,12 +2,12 @@ package RevisionTopics.String.StringBuffer;
 
 public class Methods {
     public static void main(String[] args) {
-        StringBuffer name = new StringBuffer("Saikumar");
+        StringBuffer name = new StringBuffer("LC_13_RomanToInteger");
         System.out.println(name);
 
         //1.append Method
         name = name.append(" Laveti");
-        System.out.println(name); //Saikumar Laveti
+        System.out.println(name); //LC_13_RomanToInteger Laveti
 
         //2.insert Method
         name = name.insert(3,"hello");
@@ -39,8 +39,8 @@ public class Methods {
         StringBuffer s2 = new StringBuffer("Sai");
         System.out.println(s1 == s2);//false (different references)
 
-        String names = "Saikumar";
-        String namess = "Saikumar";
+        String names = "LC_13_RomanToInteger";
+        String namess = "LC_13_RomanToInteger";
         System.out.println(names == namess); //true(same references)
 
 

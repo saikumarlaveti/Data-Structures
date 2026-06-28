@@ -7,7 +7,7 @@ public class BinaryOperator_09 {
     public static void main(String[] args) {
         //1.apply ( )
         BinaryOperator<String> details = (name,age) -> "My name is " + name + " age is  " + age;
-        System.out.println(details.apply("Saikumar","26")); // My name is Saikumar age is  26
+        System.out.println(details.apply("LC_13_RomanToInteger","26")); // My name is LC_13_RomanToInteger age is  26
 
         //2.andThen( )
         BinaryOperator<Integer> addition = (a,b) -> a+b;

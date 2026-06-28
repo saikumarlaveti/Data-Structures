@@ -9,7 +9,7 @@ public class Map_03 {
         List<Integer> nums = Arrays.asList(1,2,3,4,5);
         nums.stream().map(n->n*2).forEach(System.out::println);
 
-        List<String> names = Arrays.asList("Saikumar","Santosh","Naveen");
+        List<String> names = Arrays.asList("LC_13_RomanToInteger","Santosh","Naveen");
         System.out.println(names);
         names.stream().map(n->n.toUpperCase()).forEach(System.out::println);  //both are same output
         names.stream().map(String::toUpperCase).forEach(System.out::println);

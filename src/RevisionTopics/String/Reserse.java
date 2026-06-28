@@ -25,7 +25,7 @@ public class Reserse {
     }
         public static void main(String[] args) {
         Reserse re = new Reserse();
-        String name = "Saikumar";
+        String name = "LC_13_RomanToInteger";
         re.approach1(name);
         re.approach2(name);
         re.approach3(name);

@@ -5,7 +5,7 @@ import java.util.*;
 public class Map_Api_Enhancment {
     public static void main(String[] args) {
         //Before java 8
-        List<String> frequent = Arrays.asList("Saikumar","Santosh","Naresh","Saikumar","Santosh");
+        List<String> frequent = Arrays.asList("LC_13_RomanToInteger","Santosh","Naresh","LC_13_RomanToInteger","Santosh");
         Map<String,Integer> count = new HashMap<>();
         for(String word:frequent){
             if(count.containsKey(word)){
@@ -14,11 +14,11 @@ public class Map_Api_Enhancment {
                 count.put(word,1);
             }
         }
-        System.out.println(count);    // {Saikumar=2, Naresh=1, Santosh=2}
+        System.out.println(count);    // {LC_13_RomanToInteger=2, Naresh=1, Santosh=2}
 
         Map<String,Integer> wordCount = new HashMap<>();
         for(String i :frequent){
-            wordCount.merge(i,1,Integer::sum);  // {Saikumar=2, Naresh=1, Santosh=2}
+            wordCount.merge(i,1,Integer::sum);  // {LC_13_RomanToInteger=2, Naresh=1, Santosh=2}
         }
         System.out.println(wordCount);
         /*===============================================================================================*/
@@ -65,11 +65,11 @@ public class Map_Api_Enhancment {
         System.out.println(updated2); // false — no change
   //      5. replaceAll()
             Map<String,Integer> names = new HashMap<>();
-            names.put("Saikumar",10);
+            names.put("LC_13_RomanToInteger",10);
             names.put("Santosh",20);
 
             names.replaceAll((a,b)->b+5);
-            System.out.println(names);  // {Saikumar=15, Santosh=25}
+            System.out.println(names);  // {LC_13_RomanToInteger=15, Santosh=25}
 
         // Using key in transformation
         Map<String, String> greetings = new HashMap<>();
@@ -106,8 +106,8 @@ public class Map_Api_Enhancment {
 // Key already exists — reuses same list, doesn't recreate
         groups.computeIfAbsent("vegetables", k -> new ArrayList<>()).add("Carrot");
         System.out.println(groups);   // {fruits=[Apple, Banana], vegetables=[Carrot]}
-        groups.computeIfAbsent("fruits",k->new ArrayList<>()).add("Saikumar");
-        System.out.println(groups);  //  {fruits=[Apple, Banana, Saikumar], vegetables=[Carrot]}
+        groups.computeIfAbsent("fruits",k->new ArrayList<>()).add("LC_13_RomanToInteger");
+        System.out.println(groups);  //  {fruits=[Apple, Banana, LC_13_RomanToInteger], vegetables=[Carrot]}
 
 
    //     8. computeIfPresent()

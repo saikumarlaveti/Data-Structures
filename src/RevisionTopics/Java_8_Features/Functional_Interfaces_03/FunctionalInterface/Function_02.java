@@ -9,7 +9,7 @@ public class Function_02 {
         System.out.println(squreOfNum.apply(3));  //9
 
         Function<String,Integer> StringOfLen = num -> num.length();
-        System.out.println(StringOfLen.apply("Saikumar"));  // 8
+        System.out.println(StringOfLen.apply("LC_13_RomanToInteger"));  // 8
         System.out.println(StringOfLen.apply("Laveti"));  // 6
 
         Function<String,String> UpperCase = name -> name.toUpperCase();
@@ -35,7 +35,7 @@ public class Function_02 {
         //4.identity()
 
         Function<String,String> name = Function.identity();
-        System.out.println(name.apply("Saikumar")); //Saikumar
+        System.out.println(name.apply("LC_13_RomanToInteger")); //LC_13_RomanToInteger
 
 
     }

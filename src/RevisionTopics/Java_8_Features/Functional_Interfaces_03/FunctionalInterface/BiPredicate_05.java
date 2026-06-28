@@ -11,16 +11,16 @@ public class BiPredicate_05 {
         System.out.println(result.test(5, 4)); //true
 
         BiPredicate<String,String> equals = (a,b) -> a.equals(b);
-        System.out.println(equals.test("Saikumar","Saikumar")); //true
+        System.out.println(equals.test("LC_13_RomanToInteger","LC_13_RomanToInteger")); //true
         System.out.println(equals.test("sai","kumar"));//false
 
         //2.and()
-        BiPredicate<Integer,String> check1 = (a,b) -> a>18 && b.startsWith("Saikumar");
+        BiPredicate<Integer,String> check1 = (a,b) -> a>18 && b.startsWith("LC_13_RomanToInteger");
         BiPredicate<Integer,String> check2 = (c,d) -> c<25 && d.endsWith("Laveti");
 
         BiPredicate<Integer,String> result3 = check1.and(check2);
 
-        System.out.println(result3.test(20, "Saikumar Laveti")); //true
+        System.out.println(result3.test(20, "LC_13_RomanToInteger Laveti")); //true
         System.out.println(result3.test(26, "Santosh Laveti"));  //false
 
 
