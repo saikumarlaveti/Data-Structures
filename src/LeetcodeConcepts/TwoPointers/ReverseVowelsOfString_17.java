@@ -1,6 +1,6 @@
 package LeetcodeConcepts.TwoPointers;
 
-public class ReverseVowelsOfString {
+public class ReverseVowelsOfString_17 {
     public static String reverseVowels(String s) {
         String vowels = "aeiouAEIOU";
         char[] arr = s.toCharArray();
