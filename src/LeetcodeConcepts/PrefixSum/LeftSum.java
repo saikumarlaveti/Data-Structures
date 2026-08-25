@@ -13,5 +13,6 @@ public class LeftSum {
     public static void main(String[] args) {
         int[] nums = {10,4,8,3};  // [0, 10, 14, 22]
         System.out.println(Arrays.toString(leftSum(nums)));
+        System.out.println();
     }
 }
