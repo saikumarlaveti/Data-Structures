@@ -12,7 +12,7 @@ public static int[] TotalSum(int[] nums) {
     return result;
 }
 public static void main(String[] args) {
-    int[] nums = {10,4,8,3};  // [10, 14, 22, 25]
+    int[] nums = {6,9,14,5,3,8,7,12,13,1};
     System.out.println(Arrays.toString(TotalSum(nums)));
     String name = "LC_13_RomanToInteger";
 }
