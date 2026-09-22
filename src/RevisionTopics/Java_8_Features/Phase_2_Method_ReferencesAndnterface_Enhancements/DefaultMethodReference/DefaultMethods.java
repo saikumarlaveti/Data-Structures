@@ -1,9 +1,4 @@
-package RevisionTopics.Java_8_Features.Phase_2_Method_ReferencesAndnterface_Enhancements.DefaultAndStatic;
-
-import List.LinkedList.DoubleLL.DoubleLinkedList;
-
-import java.util.LinkedList;
-import java.util.Stack;
+package RevisionTopics.Java_8_Features.Phase_2_Method_ReferencesAndnterface_Enhancements.DefaultMethodReference;
 
 public interface DefaultMethods {
     default void print() {
