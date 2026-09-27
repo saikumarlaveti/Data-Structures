@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class FirstNegativeNumber {
+public class FirstNegativeNumber_03 {
     public static int[] firstNegative(int[] arr, int k){
         int[] result = new int[arr.length-k+1];
         for(int i = 0;i<arr.length-k;i++){
@@ -24,25 +24,25 @@ public class FirstNegativeNumber {
         Queue<Integer> queue = new LinkedList<>();
         int left = 0;
         int resultIndex = 0;
-        for (int right = 0; right < arr.length; right++) {
-            // Add negative number entering the window
-            if (arr[right] < 0) {
+        for(int right = 0;right<arr.length;right++){
+            //step - 1 : if negative add in queue
+            if(arr[right]<0){
                 queue.add(arr[right]);
             }
-            // Window size becomes k
-            if (right - left + 1 == k) {
-                // Get first negative
-                if (queue.isEmpty()) {
+            //step 2 : adding element in result arr and if the queue is have an element
+            if(right-left+1 == k){
+                if(queue.isEmpty()){
                     result[resultIndex] = 0;
-                } else {
+                }
+                else {
                     result[resultIndex] = queue.peek();
                 }
                 resultIndex++;
-                // Remove the element leaving the window
-                if (!queue.isEmpty() && arr[left] == queue.peek()) {
+                //remove the element window moving to the next windom
+                if(!queue.isEmpty() && arr[left] == queue.peek()){
                     queue.poll();
                 }
-               left++;
+                left++;
             }
         }
         return result;
@@ -50,5 +50,7 @@ public class FirstNegativeNumber {
     public static void main(String[] args) {
     int[] result = firstNegative(new int[]{12, -1, -7, 8, -15, 30, 16, 28},3);
         System.out.println(Arrays.toString(result));
+        int[] result1 = firstNegativeSlidingWindowMethod(new int[]{12, -1, -7, 8, -15, 30, 16, 28},3);
+        System.out.println(Arrays.toString(result1));
     }
 }

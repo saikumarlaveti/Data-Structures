@@ -1,6 +1,5 @@
-package RevisionTopics.Java_8_Features.Phase_2_Method_ReferencesAndnterface_Enhancements.StaticMethodReference;
+package RevisionTopics.Java_8_Features.Phase_2_Method_ReferencesAndnterface_Enhancements.StaticMethodReference_01;
 
-import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
