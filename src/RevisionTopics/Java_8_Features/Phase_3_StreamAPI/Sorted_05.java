@@ -73,6 +73,57 @@ public class Sorted_05 {
 
         salaries.stream().sorted(Comparator.reverseOrder()).filter(n->n>40000).forEach(System.out::println);
 
+        System.out.println("9. Double numbers and sort them");
+        List<Integer> numbers9 = Arrays.asList(
+                5, 2, 8, 3, 1
+        );
+
+        numbers9.stream().sorted().map(n->n*2).forEach(System.out::println);
+
+        System.out.println("10. Convert names to uppercase and sort alphabetically");
+        List<String> names10 = Arrays.asList(
+                "sai",
+                "ravi",
+                "john",
+                "anil",
+                "kumar"
+        );
+        names10.stream().sorted().map(String::toUpperCase).forEach(System.out::println);
+
+        System.out.println("11. Find name lengths and sort them");
+        List<String> names11 = Arrays.asList(
+                "Java",
+                "Spring",
+                "AWS",
+                "Microservices",
+                "SQL"
+        );
+
+        names11.stream().map(String::length).sorted().forEach(System.out::println);
+
+        System.out.println("12. Convert names to their lengths and sort descending");
+        List<String> names12 = Arrays.asList(
+                "Java",
+                "Spring",
+                "AWS",
+                "Microservices",
+                "SQL"
+        );
+
+        names12.stream().map(String::length).sorted(Comparator.reverseOrder()).forEach(System.out::println);
+
+        System.out.println("13. Sort names by length");
+        List<String> names13 = Arrays.asList(
+                "Alexander",
+                "Sai",
+                "Kumar",
+                "Ravi",
+                "John"
+        );
+
+        names13.stream().sorted(Comparator.comparing(String::length)).forEach(System.out::println);
+
+
 
     }
 }
