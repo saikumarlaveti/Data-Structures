@@ -236,6 +236,98 @@ Both are terminal operations.
         List<Integer> num10 = numbers10.stream().filter(n->n%2==0).distinct().map(m->m*2).sorted().collect(Collectors.toList());
         System.out.println(num10);
 
+        System.out.println("11.Collect unique names");
+        List<String> names11 = Arrays.asList(
+                "Sai", "Ravi", "Sai", "Kumar", "Ravi"
+        );
+        Set<String> result11 = names11.stream().collect(Collectors.toSet());
+        System.out.println(result11);
+
+        System.out.println("12.Collect unique even numbers");
+        int[] arr12 = {10, 15, 20, 10, 30, 20, 35};
+        Set<Integer> result12 = Arrays.stream(arr12).filter(n->n%2==0).boxed().collect(Collectors.toSet());
+        System.out.println(result12);
+
+        System.out.println("Q13. Collect unique uppercase names");
+        List<String> names13 = Arrays.asList(
+                "java", "spring", "java", "mysql", "spring"
+        );
+        Set<String> result13 = names13.stream().map(String::toUpperCase).collect(Collectors.toSet());
+        System.out.println(result13);
+
+        System.out.println("Q14. Collect unique squares");
+        int[] arr14 = {2, 3, 2, 4, 3, 5};
+        Set<Integer> result14 = Arrays.stream(arr14).map(n->n*n).boxed().collect(Collectors.toSet());
+        System.out.println(result14);
+
+        System.out.println("Q15. Collect unique names longer than 4 characters");
+        List<String> names15 = Arrays.asList(
+                "Sai", "Ramesh", "Kumar", "Ramesh",
+                "John", "Alexander", "Kumar"
+        );
+
+        Set<String> result15 = names15.stream().distinct().filter(n->n.length()>4).collect(Collectors.toSet());
+        System.out.println(result15);
+
+        System.out.println("Q16. Join names without separator");
+        List<String> names16 = Arrays.asList("Sai", "Ravi", "Kumar");
+        String result16  = names16.stream().collect(Collectors.joining());
+        System.out.println(result16);
+
+        System.out.println("Q17. Join programming languages with commas");
+        List<String> languages17 = Arrays.asList("Java", "Python", "SQL", "JavaScript");
+        String result17 =  languages17.stream().collect(Collectors.joining(","));
+        System.out.println(result17);
+
+        System.out.println("Q18. Join names with a hyphen");
+        List<String> names18 = Arrays.asList("Ravi", "Kumar", "Sai");
+        String result18 = names18.stream().collect(Collectors.joining("-"));
+        System.out.println(result18);
+
+        System.out.println("Q19. Join with prefix and suffix");
+        List<String> fruits19 = Arrays.asList("Apple", "Banana", "Mango");
+        String result19 = fruits19.stream().collect(Collectors.joining(",","[","]"));
+        System.out.println(result19);
+
+        System.out.println("Q20. Convert names to uppercase and join");
+        List<String> names20 = Arrays.asList("java", "spring", "mysql");
+        String result20 = names20.stream().map(String::toUpperCase).collect(Collectors.joining("|"));
+        System.out.println(result20);
+
+        System.out.println("Q21. Filter names starting with S and join");
+        List<String> names21 = Arrays.asList(
+                "Sai", "Ravi", "Santosh", "Kumar", "Suresh"
+        );
+        String result21 = names21.stream().filter(s->s.startsWith("S")).collect(Collectors.joining(","));
+        System.out.println(result21);
+
+        System.out.println("Q22. Join numbers with a comma");
+        List<Integer> numbers22 = Arrays.asList(10, 20, 30, 40);
+        String result22 = numbers22.stream().map(String::valueOf).collect(Collectors.joining(","));
+        System.out.println(result22);
+
+        System.out.println("Q23. Join unique names");
+        List<String> names23 = Arrays.asList(
+                "Sai", "Ravi", "Sai", "Kumar", "Ravi"
+        );
+        String result23 = names23.stream().distinct().collect(Collectors.joining("-"));
+        System.out.println(result23);
+
+        System.out.println("Q24. Sort names and join");
+        List<String> names24 = Arrays.asList(
+                "Kumar", "Sai", "Anil", "Ravi"
+        );
+        String result24 = names24.stream().sorted().collect(Collectors.joining(","));
+        System.out.println(result24);
+
+        System.out.println("Q25. Combine multiple operations");
+        List<String> names25 = Arrays.asList(
+                "java", "python", "java", "spring",
+                "mysql", "spring", "docker"
+        );
+      String result25 = names25.stream().distinct().filter(n->n.length()>4).map(String::toUpperCase).sorted().collect(Collectors.joining(" - "));
+      System.out.println(result25);
+
 
     }
     }
