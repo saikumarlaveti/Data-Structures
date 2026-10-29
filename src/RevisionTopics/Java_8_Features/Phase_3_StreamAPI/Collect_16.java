@@ -328,6 +328,177 @@ Both are terminal operations.
       String result25 = names25.stream().distinct().filter(n->n.length()>4).map(String::toUpperCase).sorted().collect(Collectors.joining(" - "));
       System.out.println(result25);
 
+        System.out.println("Q1. Group names by length");
+        List<String> names1 = Arrays.asList(
+                "Sai", "Ravi", "John", "Kumar", "Anil"
+        );
+        Map<Integer,List<String>> result1 = names1.stream().collect(Collectors.groupingBy(n->n.length()));
+        System.out.println(result1);
+
+        System.out.println("Q2. Group numbers into even and odd");
+        List<Integer> numbers2 = Arrays.asList(
+                10, 15, 20, 25, 30, 35
+        );
+        Map<String,List<Integer>> result2 = numbers2.stream().collect(Collectors.groupingBy(n->n%2==0?"Even":"Odd"));
+        System.out.println(result2);
+
+        System.out.println("Q3. Group names by first character");
+        List<String> names3 = Arrays.asList(
+                "Sai", "Santosh", "Ravi", "Ramesh", "Kumar"
+        );
+        Map<Character,List<String>> result3 = names3.stream().collect(Collectors.groupingBy(s->s.charAt(0)));
+        System.out.println(result3);
+
+        System.out.println("Q4. Count frequency of each word");
+        List<String> words4 = Arrays.asList(
+                "Java", "Python", "Java", "SQL", "Python", "Java"
+        );
+        Map<String,Long> result4 = words4.stream().collect(Collectors.groupingBy(c->c,Collectors.counting()));
+        System.out.println(result4);
+
+        System.out.println("Q5. Group numbers greater than 20");
+        List<Integer> numbers5 = Arrays.asList(
+                10, 25, 15, 40, 30, 5
+        );
+        Map<String,List<Integer>> result5 = numbers5.stream().collect(Collectors.groupingBy(n->n>20?"Greater":"SmallerOrEqual"));
+        System.out.println(result5);
+
+        System.out.println("Q6. Group names by first character and count");
+        List<String> names6 = Arrays.asList(
+                "Sai", "Santosh", "Ravi", "Ramesh", "Kumar", "Suresh"
+        );
+        Map<Character,Long> result6 = names6.stream().collect(Collectors.groupingBy(s->s.charAt(0),Collectors.counting()));
+        System.out.println(result6);
+
+        System.out.println("Q7. Group numbers by remainder when divided by 3");
+        List<Integer> numbers7 = Arrays.asList(
+                3, 4, 5, 6, 7, 8, 9
+        );
+        Map<Integer, List<Integer>> result7 = numbers7.stream().collect(Collectors.groupingBy(n->n%3,Collectors.toList()));
+        System.out.println(result7);
+
+        System.out.println("Q8. Group words by uppercase first letter");
+        List<String> words8 = Arrays.asList(
+                "apple", "ant", "banana", "ball", "cat"
+        );
+        Map<Character,List<String>> result8 = words8.stream().collect(Collectors.groupingBy(s->Character.toUpperCase(s.charAt(0))));
+        System.out.println(result8);
+
+        System.out.println("Q9. Group numbers into positive, negative and zero");
+        List<Integer> numbers9 = Arrays.asList(
+                -10, 5, 0, -3, 8, 0, -7
+        );
+        Map<String,List<Integer>> result9 = numbers9.stream().collect(Collectors.groupingBy(n->n>0?"Positive":n<0?"Negative":"Zero"));
+        System.out.println(result9);
+
+        System.out.println("Q10. Group words by length and count");
+        List<String> words10 = Arrays.asList(
+                "Java", "SQL", "Spring", "AWS", "Docker", "API"
+        );
+
+        Map<Integer,Long> result10 = words10.stream().collect(Collectors.groupingBy(c->c.length(),Collectors.counting()));
+        System.out.println(result10);
+
+        System.out.println("Q11 — Group numbers into three categories");
+        List<Integer> numbers11 = Arrays.asList(
+                -5, 0, 10, -15, 20, 0, -3
+        );
+        Map<String,List<Integer>> result11 = numbers11.stream().collect(Collectors.groupingBy(n->n>0?"Positive":n<0?"Negative":"Zero"));
+        System.out.println(result11);
+
+        System.out.println("Q12 — Group names by uppercase first letter");
+        List<String> names12 = Arrays.asList(
+                "sai", "ravi", "suresh", "ramesh", "kumar"
+        );
+
+        Map<Character,List<String>> result12 = names12.stream().collect(Collectors.groupingBy(s->Character.toUpperCase(s.charAt(0))));
+        System.out.println(result12);
+
+        System.out.println("Q13 — Group numbers into two categories");
+        List<Integer> numbers13 = Arrays.asList(
+                10, 25, 20, 30, 15, 40
+        );
+        Map<String,List<Integer>> result13 = numbers13.stream().collect(Collectors.groupingBy(n->n>20?"GreaterThan20":"LessThanOrEqual20"));
+        System.out.println(result13);
+
+
+         System.out.println("Q1. Partition even and odd numbers");
+        List<Integer> numbers1 = Arrays.asList(
+                10, 15, 20, 25, 30, 35
+        );
+        Map<Boolean,List<Integer>> result1 = numbers1.stream().collect(Collectors.partitioningBy(n->n%2==0));
+        System.out.println(result1);
+
+        System.out.println("Q2. Partition numbers greater than 20");
+        List<Integer> numbers2 = Arrays.asList(
+                10, 25, 15, 40, 30, 5
+        );
+        Map<Boolean,List<Integer>> result2 = numbers2.stream().collect(Collectors.partitioningBy(n->n>20));
+        System.out.println(result2);
+
+        System.out.println("Q3. Partition names starting with S");
+        List<String> names3 = Arrays.asList(
+                "Sai", "Ravi", "Santosh", "Kumar", "Suresh"
+        );
+
+        Map<Boolean, List<String>> result3 = names3.stream()
+                .collect(Collectors.partitioningBy(
+                        n -> n.startsWith("S")
+                ));
+
+        System.out.println(result3);
+        List<Integer> numbers4 = Arrays.asList(
+                -10, 5, 0, -3, 8, 0, -7
+        );
+        Map<Boolean,List<Integer>> result4 = numbers4.stream().collect(Collectors.partitioningBy(n->n>0));
+        System.out.println(result4);
+
+        System.out.println("Q5. Partition names longer than 4 characters");
+        List<String> names5 = Arrays.asList(
+                "Sai", "Ramesh", "John", "Alexander", "Kumar"
+        );
+
+        Map<Boolean,List<String>> result5 = names5.stream().collect(Collectors.partitioningBy(n->n.length()>4));
+        System.out.println(result5);
+
+        System.out.println("Q6. Count even and odd numbers");
+        List<Integer> numbers6 = Arrays.asList(
+                10, 15, 20, 25, 30, 35, 40
+        );
+        Map<Boolean,Long> result6 = numbers6.stream().collect(Collectors.partitioningBy(n->n%2==0,Collectors.counting()));
+        System.out.println(result6);
+
+        System.out.println("Q7. Count names starting with A");
+        List<String> names7 = Arrays.asList(
+                "Amit", "Ravi", "Anil", "Kumar", "Arjun", "Sai"
+        );
+
+        Map<Boolean,Long> result7 = names7.stream().collect(Collectors.partitioningBy(n->n.startsWith("A"),Collectors.counting()));
+        System.out.println(result7);
+
+        System.out.println("Q8. Partition numbers divisible by 3");
+        List<Integer> numbers8 = Arrays.asList(
+                3, 4, 6, 7, 9, 10, 12
+        );
+
+        Map<Boolean,List<Integer>> result8= numbers8.stream().collect(Collectors.partitioningBy(n->n%3==0,Collectors.toList()));
+        System.out.println(result8);
+
+        System.out.println("Q9. Partition uppercase and lowercase words");
+        List<String> words9 = Arrays.asList(
+                "JAVA", "spring", "SQL", "docker", "AWS"
+        );
+
+        Map<Boolean,List<String>> result9 = words9.stream().collect(Collectors.partitioningBy(s->s.equals(s.toUpperCase()),Collectors.toList()));
+        System.out.println(result9);
+
+        System.out.println("Q10. Combine filtering, mapping and partitioning");
+        List<Integer> numbers10 = Arrays.asList(
+                5, 10, 15, 20, 25, 30, 35, 40
+        );
+
+        Map<Boolean,List<Integer>> result10 = numbers10.stream().filter(n->n>10).map(m->m*2).collect(Collectors.partitioningBy(s->s>50));
+        System.out.println(result10);
 
     }
     }
