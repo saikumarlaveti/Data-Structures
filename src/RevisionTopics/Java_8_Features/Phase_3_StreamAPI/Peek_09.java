@@ -1,6 +1,7 @@
 package RevisionTopics.Java_8_Features.Phase_3_StreamAPI;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class Peek_09 {
@@ -59,7 +60,7 @@ public class Peek_09 {
                 new Employee("Kumar", 45000)
         );
 
-        employees9.stream().filter(e->e.salary>45000).peek(e-> System.out.println(e.getName() + " " + e.getSalary())).forEach(System.out::println);
+        employees9.stream().filter(e-> e.getSalary() >45000).peek(e-> System.out.println(e.getName() + " " + e.getSalary())).forEach(System.out::println);
 
 
         System.out.println("Inspect the original numbers, filter numbers greater than 10, double them, inspect the transformed values, sort them in descending order, and print the final results.");

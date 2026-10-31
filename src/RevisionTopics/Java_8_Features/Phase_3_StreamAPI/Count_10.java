@@ -2,6 +2,8 @@ package RevisionTopics.Java_8_Features.Phase_3_StreamAPI;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Collection;
+import java.util.Comparator;
 
 public class Count_10 {
     public static class Employee{
@@ -33,22 +35,21 @@ public class Count_10 {
         //odd numbers
         System.out.println(numbers.stream().filter(n->n%2==1).count());  // 4
         //Even numbers
-       long result =  numbers.stream().filter(n->n%2==0).count();  //5
+        long result = numbers.stream().filter(n->n%2==0).count();  //5
         System.out.println(result);
 
         List<String> names = Arrays.asList("LC_13_RomanToInteger","Santosh","Naveen","Naresh");
         Long result1 = names.stream().filter(n->n.startsWith("S")).count(); //2
         System.out.println(result1);
 
-
         System.out.println("1.Count all numbers");
         int[] arr = new int[]{10, 20, 30, 40, 50, 60};
-        long result = Arrays.stream(arr).count();
-        System.out.println(result);
+        long resultAllNumbers = Arrays.stream(arr).count();
+        System.out.println(resultAllNumbers);
 
         System.out.println("2.Count names");
-        String[] names = new String[]{"Sai", "Ravi", "Kumar", "John", "Anil"};
-        long result2 = Arrays.stream(names).count();
+        String[] namesArray = new String[]{"Sai", "Ravi", "Kumar", "John", "Anil"};
+        long result2 = Arrays.stream(namesArray).count();
         System.out.println(result2);
 
         System.out.println("3.Count numbers greater than 20");
@@ -77,15 +78,15 @@ public class Count_10 {
         System.out.println(result7);
 
         System.out.println("8.Count employees earning more than 45,000");
-        List<Peek.Employee> employees = Arrays.asList(
-                new Peek.Employee("Sai", 50000),
-                new Peek.Employee("Ravi", 40000),
-                new Peek.Employee("John", 65000),
-                new Peek.Employee("Kumar", 45000)
-        );
-
-        long result8 = employees.stream().filter(e->e.getSalary()>45000).count();
-        System.out.println(result8);
+//        List<Peek.Employee> employees = Arrays.asList(
+//                new Peek.Employee("Sai", 50000),
+//                new Peek.Employee("Ravi", 40000),
+//                new Peek.Employee("John", 65000),
+//                new Peek.Employee("Kumar", 45000)
+//        );
+//
+//        long result8 = employees.stream().filter(e->e.getSalary()>45000).count();
+//        System.out.println(result8);
 
         System.out.println("9.Count distinct numbers in nested lists");
         List<List<Integer>> numbers9 = Arrays.asList(

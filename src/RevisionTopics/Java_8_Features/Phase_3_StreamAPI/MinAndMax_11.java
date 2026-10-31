@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.OptionalInt;
 
 public class MinAndMax_11 {
     public static class Employee{
@@ -79,10 +80,10 @@ public class MinAndMax_11 {
 
         System.out.println("8.Find the employee with the highest salary");
         List<Employee> name8 = Arrays.asList(
-                 new Employee("Saikumar",5000),
+                new Employee("Saikumar",5000),
                 new Employee("Santosh",9000),
                 new Employee("Naveen",4000)
-                );
+        );
 
         Optional<Employee> result8 = name8.stream().max(Comparator.comparing(Employee::getSalary));
         System.out.println(result8);

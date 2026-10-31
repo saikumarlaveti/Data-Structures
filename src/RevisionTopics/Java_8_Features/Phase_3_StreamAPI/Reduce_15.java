@@ -309,8 +309,8 @@ Sum of distinct numbers: 100
         System.out.println(sumOfSquares);
 
         System.out.println("7.Combine names");
-        String[] names = {"Sai", "Ravi", "Kumar"};
-        String names7 =  Arrays.stream(names).reduce("",(a,b)->a+b+" ");
+        String[] names1 = {"Sai", "Ravi", "Kumar"};
+        String names7 =  Arrays.stream(names1).reduce("",(a,b)->a+b+" ");
         System.out.println(names7);
 
         System.out.println("8.Sum of numbers greater than 10");
