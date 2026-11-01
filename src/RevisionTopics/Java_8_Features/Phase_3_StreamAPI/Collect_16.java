@@ -1,6 +1,7 @@
 package RevisionTopics.Java_8_Features.Phase_3_StreamAPI;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
@@ -500,5 +501,89 @@ Both are terminal operations.
         Map<Boolean,List<Integer>> partitionResult10 = partitionNumbers10.stream().filter(n->n>10).map(m->m*2).collect(Collectors.partitioningBy(s->s>50));
         System.out.println(partitionResult10);
 
+        System.out.println("Map Started :: ");
+        System.out.println("Q1. Convert names into name-length pairs");
+        List<String> map1 = Arrays.asList(
+                "Sai", "Ravi", "Kumar", "John"
+        );
+
+        Map<String,Integer> mapresult1 = map1.stream().collect(Collectors.toMap(mapname->mapname,mapname-> mapname.length()));
+        System.out.println(mapresult1);
+
+        System.out.println("Q2. Convert numbers into squares");
+        List<Integer> map2 = Arrays.asList(
+                2, 3, 4, 5, 6
+        );
+        Map<Integer,Integer> mapresult2 = map2.stream().collect(Collectors.toMap(mapname2->mapname2,mapname2->mapname2*mapname2));
+        System.out.println(mapresult2);
+
+        System.out.println("Q3. Convert names into uppercase values");
+        List<String> map3 = Arrays.asList(
+                "sai", "ravi", "kumar"
+        );
+        Map<String,String> mapresult3 = map3.stream().collect(Collectors.toMap(mapname3->mapname3,String::toUpperCase));
+        System.out.println(mapresult3);
+
+        System.out.println("Q4. Convert words into first-character pairs");
+        List<String> map4 = Arrays.asList(
+                "Java", "Python", "SQL", "Docker"
+        );
+        Map<String,Character>mapresult4 = map4.stream().collect(Collectors.toMap(mapname4->mapname4,mapname4->mapname4.charAt(0)));
+        System.out.println(mapresult4);
+
+        System.out.println("Q5. Convert numbers into even/odd labels");
+        List<Integer> map5 = Arrays.asList(
+                10, 15, 20, 25, 30
+        );
+
+        Map<Integer,String> mapresult5 = map5.stream().collect(Collectors.toMap(mapnumber5->mapnumber5,
+                mapnumber5->mapnumber5%2==0?"Even":"Odd"));
+        System.out.println(mapresult5);
+
+        System.out.println("Q6. Handle duplicate names — Keep first value");
+        List<String> map6 = Arrays.asList(
+                "Sai", "Ravi", "Sai", "Kumar"
+        );
+
+        Map<String,Integer> mapResult6 = map6.stream()
+                .collect(Collectors.toMap(mapname6->mapname6,
+                        String::length,
+                        (oldvalue,newvalue)->oldvalue));
+        System.out.println(mapResult6);
+
+        System.out.println("Q7. Handle duplicate names — Count occurrences");
+        List<String>  map7 = Arrays.asList(
+                "Java", "SQL", "Java", "Python", "SQL", "Java"
+        );
+        Map<String,Integer> mapResult7 = map7.stream().collect(Collectors.toMap(word1->word1,word->1,Integer::sum));
+        System.out.println(mapResult7);
+
+        System.out.println("Q8. Use Function.identity()");
+        List<String> map8 = Arrays.asList(
+                "Apple", "Banana", "Mango"
+        );
+        Map<String,Integer>mapresult8 =  map8.stream().collect(Collectors.toMap(Function.identity(),String::length));
+        System.out.println(mapresult8);
+
+        System.out.println("Q9. Handle duplicate lengths");
+        System.out.println("Use the string length as the key and the string itself as the value.\n" +
+                "\n" +
+                "When two strings have the same length, keep the first string.");
+        List<String> names9 = Arrays.asList(
+                "Sai", "Ram", "Ravi", "John", "Kumar"
+        );
+        Map<Integer,String> mapResult9 = names9.stream().collect(Collectors.toMap(word2->word2.length(),
+                word2->word2,(oldvalue,newvalue)->oldvalue));
+        System.out.println(mapResult9);
+
+        System.out.println("10.Filter numbers greater than 10.\n" +
+                "Multiply each remaining number by 2.\n" +
+                "Create a map where the key is the multiplied number and the value is its square.");
+        List<Integer> map10 = Arrays.asList(
+                5, 10, 15, 20, 25, 30
+        );
+
+        Map<Integer,Integer> mapResult10 = map10.stream().filter(n->n>10).map(m->m*2).collect(Collectors.toMap(word4->word4,word4->word4*word4));
+        System.out.println(mapResult10);
     }
 }
